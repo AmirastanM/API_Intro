@@ -64,6 +64,7 @@ namespace API_Intro_HomeTask.Controllers
             var data = await _context.Books.FindAsync(id);
             if (data == null) return NotFound();
             data.Name = book.Name;
+            data.Price = book.Price;
             await _context.SaveChangesAsync();
             return Ok();
         }
